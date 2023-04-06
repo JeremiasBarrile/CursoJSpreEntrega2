@@ -13,5 +13,19 @@ function encontrarAbono(codigo){
 abonos.find((abono)=> abonos.codigo === parseInt(codigo))
 return
 }
+function compraRealizada(){
+  if(carritoAbonos.length > 0){
+    console.warn("carrito vacio" + "👎🏻")
+  }
+  const buyA = new compraAbono(carrito)
+    alert('💰 El costo total es de: $ ' + buyA.obtenerSubtotal())
+
+    let descuento = 0.90
+    let respuesta = confirm("¿Deseas confirmar tu pago?")
+        if (respuesta === true) {
+            alert('✅ Confirmamos tu pago de: $ ' + (buyA.obtenerSubtotal() * descuento) + "\n Muchas gracias por la compra :)")
+            carrito.length = 0
+        }
+}
 
 
