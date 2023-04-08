@@ -44,10 +44,6 @@ function finalizarCompra() {
   }
 }
 
-function verCarritoAbonos() {
-  console.table(carritoAbonos);
-}
-
 function comprar() {
   let codigo = prompt("selecciona el abono deseado con su codigo numerico: ");
   if (!parseInt(codigo)) {
