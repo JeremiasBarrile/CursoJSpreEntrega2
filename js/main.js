@@ -1,12 +1,11 @@
-const carritoAbonos = [ { nombre: "Abono Platea Alta", codigo: 1, importe: 45000 },
-{ nombre: "Abono tribuna oficial", codigo: 2, importe: 20000 }]
+const carritoAbonos = [];
 const abonos = [
-  { nombre: "Abono Platea Alta", codigo: 1, importe: 45000 },
-  { nombre: "Abono tribuna oficial", codigo: 2, importe: 20000 },
-  { nombre: "Abono visera", codigo: 3, importe: 70000 },
-  { nombre: "Abono vieja amelia", codigo: 4, importe: 40000 },
-  { nombre: "Abono platea este", codigo: 5, importe: 60000 },
-  { nombre: "Abono palomar", codigo: 6, importe: 20000 },
+  { nombre: "Abono Platea Alta", codigo: 1974, importe: 45000 },
+  { nombre: "Abono tribuna oficial", codigo: 1988, importe: 20000 },
+  { nombre: "Abono visera", codigo: 1990, importe: 70000 },
+  { nombre: "Abono vieja amelia", codigo: 1991, importe: 40000 },
+  { nombre: "Abono platea este", codigo: 2004, importe: 60000 },
+  { nombre: "Abono palomar", codigo: 2013, importe: 20000 },
 ];
 
 class CompraAbono {
@@ -21,9 +20,6 @@ class CompraAbono {
   }
 }
 
-
-
-
 function encontrarAbono(codigo) {
   return abonos.find(abono => abono.codigo === parseInt(codigo));
 }
@@ -35,12 +31,15 @@ function finalizarCompra() {
   }
 
   const buyA = new CompraAbono(carritoAbonos);
-  alert('💰 El costo total es de: $ ' + buyA.obtenerSubtotal());
-
-  const descuento = 0.90;
+  alert("💰 El costo total es de: $ " + buyA.obtenerSubtotal());
+  const descuento = 0.9;
   let respuesta = confirm("¿Deseas confirmar tu pago?");
   if (respuesta === true) {
-    alert('✅ Confirmamos tu pago de: $ ' + (buyA.obtenerSubtotal() * descuento) + "\n Ahora a alentar a la lepra");
+    alert(
+      "✅ Confirmamos tu pago de: $ " +
+        buyA.obtenerSubtotal() * descuento +
+        "\n Ahora a alentar a la lepra"
+    );
     carritoAbonos.length = 0;
   }
 }
@@ -74,6 +73,5 @@ function comprar() {
     comprar();
   } else {
     finalizarCompra();
-    
   }
 }
