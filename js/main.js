@@ -8,17 +8,7 @@ const abonos = [
   { nombre: "Abono palomar", codigo: 2013, importe: 20000 },
 ];
 
-class CompraAbono {
-  constructor(carrito) {
-    this.carritoAbonos = carrito;
-  }
 
-  obtenerSubtotal() {
-    if (this.carritoAbonos.length > 0) {
-      return this.carritoAbonos.reduce((acc, abono) => acc + abono.importe, 0);
-    }
-  }
-}
 
 function encontrarAbono(codigo) {
   return abonos.find(abono => abono.codigo === parseInt(codigo));
